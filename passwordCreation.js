@@ -3,7 +3,7 @@
 var password = document.getElementById("password");
 var username = document.getElementById("username");
 var checkbox = document.getElementById("checkbox");
-var enterButton = document.getElementById("enter");
+var enterButton = document.getElementById("btn");
 
 
 // 1. Create class 'Password' with password requirements
@@ -92,7 +92,26 @@ password.addEventListener("keypress", (event) => {
 // CREATE RANDOM PASSWORD
 // 6. Create 'RandomPassword' extended class so the user could use a random password
 class RandomPassword {
-    constructor() {
+    specialCharStr = "~!@#$%^&*()_+{}|:<>?-=[]\;,./";
+    numbersStr = "1234567890";
+    lowerLettersStr = "qwertyuiopasdfghjklzxcvbnm";
+    upperLettersStr = "QWERTYUIOPASDFGHJKLZXCVBNM";
+    constructor(specialCharStr, numbersStr, lowerLettersStr, upperLettersStr) {
+        this.specialCharStr = specialCharStr;
+        this.numbersStr = numbersStr;
+        this.lowerLettersStr = lowerLettersStr;
+        this.upperLettersStr = upperLettersStr;
+    }
+    getSpecialChar() {
+
+    }
+    getNumber() {
+
+    }
+    getLowerLetter() {
+
+    }
+    getUpperLetter() {
 
     }
 }
