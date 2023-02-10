@@ -1,0 +1,22 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+#rememberMe {
+    font-weight: 200;
+    font-size: 14px;
+}
+
+#password::placeholder, #username::placeholder {
+    color: white;
+    opacity: 40%;
+}
+
+#container {
+    margin: 250px auto;
+    padding: 50px 30px;
+    border-radius: 8px;
+    background: #5f4e92;
+    box-shadow: 2px 2px 10px 2px #00010f82;
+}
