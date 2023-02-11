@@ -39,6 +39,7 @@ h2 {
     font-weight: 400;
     font-style: normal;
     font-family: 'Raleway';
+    
 }
 
 .username {
@@ -54,19 +55,28 @@ h2 {
 }
 
 .username:focus, .password:focus {
-    border-color: rgba(255, 255, 255, 0.939);
+    border-color: #fff;
     outline: none;
-    background-color: #7fb79a;
+    background-color: #c3e7cb8c;
+}
+
+*::selection{
+    color: #1a9a58;
+    background-color: #fff;
 }
 
 .username:hover, .password:hover {
-    border-color: rgba(255, 255, 255, 0.939);
+    cursor: text;
 }
 
 .checkbox {
     border-radius: 5px;
     outline: none;
     border: none;
+}
+
+.checkbox:hover {
+    cursor: pointer;
 }
 
 .rememberMeArea {
@@ -81,11 +91,11 @@ h2 {
 .btn {
     display: block;
     margin: 0px auto;
-    background-color: transparent;
+    background-color: #c3e7cb8c;
     color: #fff;
     letter-spacing: 4px;
     outline: none;
-    border: 1px solid #ffffffbc;
+    border: 1px solid #fff;
     border-radius: 5px;
     padding: 10px;
     margin: 45px auto;
@@ -95,9 +105,20 @@ h2 {
 }
 
 .btn:hover {
-    background-color: #7fb79a;
+    background-color: #fff;
+    color: #1a9a58;
+    font-weight: 600;
+    border: 1px solid #85B79D;
+    box-shadow: 0 2px 5px 0 #00000052;
+    cursor: pointer;
+    animation: size 0.5s linear forwards;
 }
 
-.btn:active {
-    box-shadow: 0 0 5px 0 #ffffff31;
+@keyframes size {
+    0% {
+        font-size: 14px;
+    }
+    100% {
+        font-size: 16px;
+    }
 }
