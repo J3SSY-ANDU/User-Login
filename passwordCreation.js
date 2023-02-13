@@ -8,7 +8,7 @@ var enterButton = document.getElementById("btn");
 
 // 1. Create class 'Password' with password requirements
 class Password {
-    constructor(minLength, maxLength, capLetter = false, num, specialChar = true, value = "", numChar) {
+    constructor(minLength, maxLength, capLetter = false, num, specialChar = true, value = [], numChar) {
         this.minLength = minLength;
         this.maxLength = maxLength;
         this.capLetter = capLetter;
@@ -17,25 +17,28 @@ class Password {
         this.value = value
         this.numChar = numChar;
     }
+    reverseValue;
     create() {
-        this.value = password.value;
+        this.value.push(password.value);
+        this.reverseValue = [...this.value]
+        this.reverseValue = this.reverseValue.reverse();
         if (this.checkLength() && this.checkNum()) {
             password.value = "";
         } else {
             alert("Invalid Password. It has to have numbers, upper letter, lower letter, 8-20 characters and special characters.");
-            this.value = undefined;
+            this.reverseValue[0] = undefined;
         }
         
-        return this.value;
+        return this.reverseValue[0];
     }
 
     checkLength() {
-        if (this.value.length >= 8) {
+        if (this.reverseValue[0].length >= 8) {
             this.minLength = true;
         } else {
             this.minLength = false;
         }
-        if (this.value.length <= 20) {
+        if (this.reverseValue[0].length <= 20) {
             this.maxLength = true;
         } else {
             this.maxLength = false;
@@ -49,8 +52,8 @@ class Password {
     
     checkNum() {
         this.num = false;
-        for (let i = 0; i < this.value.length; i++) {
-            if (Number.isInteger(parseInt(this.value[i]))) {
+        for (let i = 0; i < this.reverseValue[0].length; i++) {
+            if (Number.isInteger(parseInt(this.reverseValue[0][i]))) {
                 this.num = true;
                 return this.num;
             }
@@ -59,9 +62,9 @@ class Password {
     }
 }
 
-const password1 = new Password();
+const passwords = new Password();
 enterButton.onclick = () => {
-    password1.create();
+    passwords.create();
     password.value = "";
     username.value = "";
     checkbox.checked = false;
